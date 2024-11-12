@@ -26,7 +26,8 @@ let package = Package(
             ],
             path: "Sources/TeleVideoCall" , // Path to your source code folder
             resources: [
-                .process("Sources/TeleVideoCall/TelemechanicVideoMain.storyboard")
+                .process("Sources/TeleVideoCall/TelemechanicVideoMain.storyboard"),
+                .process("Sources/Font/ttf")
                        ]
         ),
         .testTarget(
