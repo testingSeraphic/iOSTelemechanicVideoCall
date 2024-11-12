@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CallManager {
+public class CallManager {
     static let shared = CallManager()
     let debugSettingsModel: DebugSettingsModel = DebugSettingsModel()
     
