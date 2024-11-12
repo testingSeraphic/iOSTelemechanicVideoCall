@@ -16,7 +16,7 @@
         <!--VideoVC-->
         <scene sceneID="E93-CO-pe7">
             <objects>
-                <viewController storyboardIdentifier="VideoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cjh-6j-tcW" customClass="VideoVC" customModule="TelemechanicVideoCallPluginDemoSPM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cjh-6j-tcW" customClass="VideoVC" customModule="TeleVideoCall" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mmm-uD-eJn">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
