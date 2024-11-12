@@ -9,7 +9,7 @@
 import UIKit
 
 class MeetingPresenter {
-    private let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    private let mainStoryboard = UIStoryboard(name: "TelemechanicVideoMain", bundle: nil)
     private var activeMeetingViewController: UIViewController?
 
     var rootViewController: UIViewController? {
