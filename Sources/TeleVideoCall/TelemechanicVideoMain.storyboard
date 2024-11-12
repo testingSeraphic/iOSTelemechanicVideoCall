@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RSm-V8-G4s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -14,78 +13,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Video Call IntiatorVC-->
-        <scene sceneID="17A-SU-GyB">
-            <objects>
-                <viewController storyboardIdentifier="VideoCallIntiatorVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RSm-V8-G4s" customClass="VideoCallIntiatorVC" customModule="TelemechanicVideoCallPluginDemoSPM" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fzU-cI-Ek9">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyP-ao-c7b">
-                                <rect key="frame" x="0.0" y="59" width="430" height="839"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="b1B-Hv-Ipt">
-                                        <rect key="frame" x="24" y="337" width="382" height="165"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meeting Id (Random)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DIK-2J-VSJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="Ecr-wH-To0"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter User Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qoM-NW-DsC">
-                                                <rect key="frame" x="0.0" y="60" width="382" height="45"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="Nco-MJ-vCH"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFe-T2-X8A">
-                                                <rect key="frame" x="0.0" y="120" width="382" height="45"/>
-                                                <color key="backgroundColor" systemColor="systemPinkColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="P1V-DV-bjy"/>
-                                                </constraints>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="START"/>
-                                                <connections>
-                                                    <action selector="startVideoCall:" destination="RSm-V8-G4s" eventType="touchUpInside" id="Ykp-Jk-HHS"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="b1B-Hv-Ipt" firstAttribute="centerY" secondItem="pyP-ao-c7b" secondAttribute="centerY" id="5fN-Mi-5yY"/>
-                                    <constraint firstAttribute="trailing" secondItem="b1B-Hv-Ipt" secondAttribute="trailing" constant="24" id="950-Qm-qq0"/>
-                                    <constraint firstItem="b1B-Hv-Ipt" firstAttribute="leading" secondItem="pyP-ao-c7b" secondAttribute="leading" constant="24" id="XtA-Ly-4GM"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="8Fr-Ry-16f"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="8Fr-Ry-16f" firstAttribute="bottom" secondItem="pyP-ao-c7b" secondAttribute="bottom" id="230-AR-sNl"/>
-                            <constraint firstItem="pyP-ao-c7b" firstAttribute="leading" secondItem="8Fr-Ry-16f" secondAttribute="leading" id="khV-7l-HnM"/>
-                            <constraint firstItem="pyP-ao-c7b" firstAttribute="top" secondItem="8Fr-Ry-16f" secondAttribute="top" id="vHs-gx-sL6"/>
-                            <constraint firstItem="pyP-ao-c7b" firstAttribute="trailing" secondItem="8Fr-Ry-16f" secondAttribute="trailing" id="wkV-Dp-RXn"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="meetingIdTextField" destination="DIK-2J-VSJ" id="wk5-2n-Zeg"/>
-                        <outlet property="userTextField" destination="qoM-NW-DsC" id="Jgg-UC-BSF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KDg-6R-IHC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1381" y="21"/>
-        </scene>
         <!--VideoVC-->
         <scene sceneID="E93-CO-pe7">
             <objects>
@@ -597,11 +524,5 @@
         <image name="showMenuOption" width="51.333332061767578" height="51.333332061767578"/>
         <image name="timer" width="12" height="12"/>
         <image name="video" width="24" height="24"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
