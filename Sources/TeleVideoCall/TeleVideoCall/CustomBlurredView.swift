@@ -7,19 +7,19 @@
 
 import UIKit
 
-public class CustomBlurredView: UIView {
+class CustomBlurredView: UIView {
 
-    public override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
     }
     
-    public required init?(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
     }
     
-    public func setupView() {
+    private func setupView() {
         // create container view
         let containerView = UIView(frame: self.bounds)
         containerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -45,7 +45,7 @@ public class CustomBlurredView: UIView {
     }
 }
 
-public class CustomVisualEffectView: UIVisualEffectView {
+final class CustomVisualEffectView: UIVisualEffectView {
     /// Create visual effect view with given effect and its intensity
     ///
     /// - Parameters:
@@ -63,7 +63,7 @@ public class CustomVisualEffectView: UIVisualEffectView {
         animator?.stopAnimation(true)
     }
     
-    public override func draw(_ rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         super.draw(rect)
         effect = nil
         animator?.stopAnimation(true)
