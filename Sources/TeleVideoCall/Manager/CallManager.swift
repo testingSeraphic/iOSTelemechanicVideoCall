@@ -8,13 +8,11 @@
 import Foundation
 
 public class CallManager {
-    static let shared = CallManager()
     let debugSettingsModel: DebugSettingsModel = DebugSettingsModel()
     
-    private init() {
-    }
+ 
     
-    func navigateToVideoCallScreen(participantName: String,channelName: String) {
+    public func navigateToVideoCallScreen(participantName: String,channelName: String) {
         
         MeetingModule.shared().prepareMeeting(meetingId: channelName,
                                               selfName: participantName,
