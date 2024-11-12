@@ -10,7 +10,9 @@ import Foundation
 public class CallManager {
     let debugSettingsModel: DebugSettingsModel = DebugSettingsModel()
     
- 
+    public init() {
+        
+    }
     
     public func navigateToVideoCallScreen(participantName: String,channelName: String) {
         
