@@ -235,7 +235,7 @@ public class VideoVC: UIViewController {
         broadcastPicker.showsMicrophoneButton = true
         
         // Add the broadcast picker to the view controller's view
-//        self.view.addSubview(broadcastPicker)
+        self.view.addSubview(broadcastPicker)
         // Enable the microphone for screen broadcasting programmatically
         enableMicrophoneForBroadcasting()
         
