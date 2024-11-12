@@ -19,7 +19,6 @@ class MeetingPresenter {
     func showMeetingView(meetingModel: MeetingModel, completion: @escaping (Bool) -> Void) {
         
         guard let rootViewController = self.rootViewController else {
-            print("RootVC=",rootViewController)
      
             completion(false)
             return
@@ -30,8 +29,6 @@ class MeetingPresenter {
             completion(false)
             return
         }
-       
-        print("meetingViewController=",meetingViewController)
         meetingViewController.modalPresentationStyle = .fullScreen
         meetingViewController.meetingModel = meetingModel
         rootViewController.present(meetingViewController, animated: true) {

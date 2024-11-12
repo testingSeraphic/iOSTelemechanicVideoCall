@@ -701,9 +701,8 @@ extension MeetingModel: DataMessageObserver {
             isRemotePortrait?(false)
         }
         else if dataMessage.topic == "cameraToggle" {
-            print("cameraTopicToggleFetched=")
             let data = String(data: dataMessage.data, encoding: .utf8) ?? ""
-            print("dataCheck=",data)
+
             frontCameraToggle?(data == "true" ? true : false)
         }
     }
