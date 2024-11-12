@@ -24,7 +24,10 @@ let package = Package(
             dependencies: [
                 .product(name: "AmazonChimeSDK", package: "amazon-chime-sdk-ios-spm")
             ],
-            path: "Sources/TeleVideoCall"  // Path to your source code folder
+            path: "Sources/TeleVideoCall" , // Path to your source code folder
+            resources: [
+                           .process("Resources/TelemechanicVideoMain.storyboard") // Add your storyboard here
+                       ]
         ),
         .testTarget(
             name: "TeleVideoCallTests",  // This is the test target
