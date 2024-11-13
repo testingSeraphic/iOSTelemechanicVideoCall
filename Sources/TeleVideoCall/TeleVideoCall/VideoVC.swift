@@ -238,6 +238,7 @@ public class VideoVC: UIViewController {
         self.view.addSubview(broadcastPicker)
         // Enable the microphone for screen broadcasting programmatically
         enableMicrophoneForBroadcasting()
+        timerLabel.font = UIFont(name: "OverusedGrotesk-SemiBold", size: 16)
         
     }
     
