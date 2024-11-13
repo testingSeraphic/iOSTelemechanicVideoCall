@@ -13,6 +13,8 @@ public struct FontManager {
     public static func initializeFonts() {
         // Find all .ttf font files in the Font/ttf folder
         if let fontURLs = Bundle.module.urls(forResourcesWithExtension: "ttf", subdirectory: "Font/ttf") {
+            print("FontURLs==",fontURLs)
+            print("FontURLsCount==",fontURLs.count)
             for fontURL in fontURLs {
                 if let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
                    let font = CGFont(fontDataProvider) {
