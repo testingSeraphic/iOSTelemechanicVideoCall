@@ -11,19 +11,23 @@ import CoreText
 
 public struct FontManager {
     public static func initializeFonts() {
-        let fontNames = ["OverusedGrotesk-SemiBold"] // Replace with your font file names
-
-        for fontName in fontNames {
-            if let fontURL = Bundle.module.url(forResource: fontName, withExtension: "ttf"), // Adjust extension if needed
-               let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
-               let font = CGFont(fontDataProvider) {
-                var error: Unmanaged<CFError>?
-                if !CTFontManagerRegisterGraphicsFont(font, &error) {
-                    print("Error registering font \(fontName): \(String(describing: error))")
+        // Find all .ttf font files in the Font/ttf folder
+        if let fontURLs = Bundle.module.urls(forResourcesWithExtension: "ttf", subdirectory: "Font/ttf") {
+            for fontURL in fontURLs {
+                if let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
+                   let font = CGFont(fontDataProvider) {
+                    var error: Unmanaged<CFError>?
+                    if !CTFontManagerRegisterGraphicsFont(font, &error) {
+                        print("Error registering font \(fontURL.lastPathComponent): \(String(describing: error))")
+                    } else {
+                        print("Successfully registered font: \(fontURL.lastPathComponent)")
+                    }
+                } else {
+                    print("Failed to load font at \(fontURL.lastPathComponent).")
                 }
-            } else {
-                print("Failed to load font \(fontName).")
             }
+        } else {
+            print("No fonts found in the specified directory.")
         }
     }
 }
