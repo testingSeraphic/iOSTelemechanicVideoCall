@@ -7,7 +7,7 @@ import PackageDescription
 let package = Package(
     name: "TeleVideoCall",
     platforms: [
-        .iOS(.v15)  // Ensure it's targeting iOS
+        .iOS(.v12)  // Ensure it's targeting iOS
     ],
     products: [
         .library(
