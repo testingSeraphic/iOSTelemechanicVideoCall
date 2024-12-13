@@ -1206,12 +1206,12 @@ extension VideoVC {
     }
     
     private func setupTableView() {
-        chatTableView.register(UINib(nibName: "ChatLeftMessageCell", bundle: nil), forCellReuseIdentifier: "ChatLeftMessageCell")
-        chatTableView.register(UINib(nibName: "ChatRightMessageCell", bundle: nil), forCellReuseIdentifier: "ChatRightMessageCell")
-        chatTableView.register(UINib(nibName: "ChatRightDocumentCell", bundle: nil), forCellReuseIdentifier: "ChatRightDocumentCell")
-        chatTableView.register(UINib(nibName: "ChatLeftDocumentCell", bundle: nil), forCellReuseIdentifier: "ChatLeftDocumentCell")
-        chatTableView.register(UINib(nibName: "ChatLeftImageCell", bundle: nil), forCellReuseIdentifier: "ChatLeftImageCell")
-        chatTableView.register(UINib(nibName: "ChatRightImageCell", bundle: nil), forCellReuseIdentifier: "ChatRightImageCell")
+        chatTableView.register(UINib(nibName: "ChatLeftMessageCell", bundle: Bundle.module), forCellReuseIdentifier: "ChatLeftMessageCell")
+        chatTableView.register(UINib(nibName: "ChatRightMessageCell", bundle: Bundle.module), forCellReuseIdentifier: "ChatRightMessageCell")
+        chatTableView.register(UINib(nibName: "ChatRightDocumentCell", bundle: Bundle.module), forCellReuseIdentifier: "ChatRightDocumentCell")
+        chatTableView.register(UINib(nibName: "ChatLeftDocumentCell", bundle: Bundle.module), forCellReuseIdentifier: "ChatLeftDocumentCell")
+        chatTableView.register(UINib(nibName: "ChatLeftImageCell", bundle: Bundle.module), forCellReuseIdentifier: "ChatLeftImageCell")
+        chatTableView.register(UINib(nibName: "ChatRightImageCell", bundle: Bundle.module), forCellReuseIdentifier: "ChatRightImageCell")
         chatTableView.delegate = self
         chatTableView.dataSource = self
         chatTableView.showsVerticalScrollIndicator = false
