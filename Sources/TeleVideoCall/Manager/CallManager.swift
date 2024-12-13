@@ -9,7 +9,7 @@ import Foundation
 
 public class CallManager {
     
-    static let shared = CallManager()
+    public static let shared = CallManager()
     let debugSettingsModel: DebugSettingsModel = DebugSettingsModel()
     
     private init() {
