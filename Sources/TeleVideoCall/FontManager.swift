@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  FontManager.swift
+//
 //
 //  Created by Apple on 12/11/24.
 //
@@ -9,7 +9,7 @@
 import UIKit
 import CoreText
 
-public struct Appearance {
+public struct FontManager {
     /// Configures all the UI of the package
     public static func configurePackageUI() {
         loadPackageFonts()

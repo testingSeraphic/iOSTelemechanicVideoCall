@@ -34,8 +34,6 @@ let package = Package(
             resources: [
                 .process("TelemechanicVideoMain.storyboard"),
                 .process("Font/ttf")
-               // .process("Font/ttf/OverusedGrotesk-Medium.ttf"),
-               // .process("Font/ttf/OverusedGrotesk-SemiBold.ttf"),
                        ]
         ),
         .testTarget(
