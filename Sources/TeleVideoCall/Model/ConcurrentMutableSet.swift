@@ -97,7 +97,7 @@ extension TimeInterval {
     static let millisecondsPerSecond = 1000
     static let dataMessageMaxDataSizeInByte = 2048
     static let dataMessageTopicRegex = "^[a-zA-Z0-9_-]{1,36}$"
-    static let maxSupportedVideoFrameRate = 30
+    static let maxSupportedVideoFrameRate = 40
     static let maxSupportedVideoHeight = 1080
     static let maxSupportedVideoWidth = maxSupportedVideoHeight / 9 * 16
 }

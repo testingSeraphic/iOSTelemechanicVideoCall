@@ -44,6 +44,12 @@ class MeetingModel: NSObject {
                                                          cameraCaptureSource: videoModel.customSource,
                                                          audioVideoConfig: audioVideoConfig)
     let uuid = UUID()
+    
+    let loginUID: String
+    let remoteUID: String
+    let meetingTime: String
+    let roleType: String
+    let loginUserName: String
 
     // States
     var isAppInBackground: Bool = false {
@@ -123,6 +129,8 @@ class MeetingModel: NSObject {
     var pointerRemovedHandler: (() -> Void)?
     var isRemotePortrait: ((Bool) -> Void)?
     var frontCameraToggle: ((Bool) -> Void)?
+    var incrementTimerRequestedHandler: (() -> Void)?
+    var incrementTimerApprovedHandler: (() -> Void)?
 
     init(meetingSessionConfig: MeetingSessionConfiguration,
          meetingId: String,
@@ -130,7 +138,12 @@ class MeetingModel: NSObject {
          primaryExternalMeetingId: String,
          selfName: String,
          audioVideoConfig: AudioVideoConfiguration,
-         meetingEndpointUrl: String) {
+         meetingEndpointUrl: String,
+         loginUID: String,
+         remoteUID: String,
+         meetingTime: String,
+         roleType: String,
+         loginUserName: String) {
         self.meetingId = meetingId
         self.meetingEndpointUrl = meetingEndpointUrl.isEmpty ? AppConfiguration.url : meetingEndpointUrl
         self.primaryMeetingId = primaryMeetingId
@@ -141,6 +154,11 @@ class MeetingModel: NSObject {
 
         let url = AppConfiguration.url.hasSuffix("/") ? AppConfiguration.url : "\(AppConfiguration.url)/"
         self.postLogger = PostLogger(name: "SDKEvents", configuration: meetingSessionConfig, url: "\(url)log_meeting_event")
+        self.loginUID =  loginUID
+        self.remoteUID = remoteUID
+        self.meetingTime = meetingTime
+        self.roleType = roleType
+        self.loginUserName = loginUserName
         super.init()
 
     }
@@ -219,19 +237,19 @@ class MeetingModel: NSObject {
                                          data: message,
                                          lifetimeMs: 1000)
         } catch {
-            logger.error(msg: "Failed to send message!")
+//            logger.error(msg: "Failed to send message!")
             return
         }
 
     }
 
     private func notify(msg: String) {
-        logger.info(msg: msg)
+//        logger.info(msg: msg)
         notifyHandler?(msg)
     }
 
     private func logWithFunctionName(fnName: String = #function, message: String = "") {
-        logger.info(msg: "[Function] \(fnName) -> \(message)")
+//        logger.info(msg: "[Function] \(fnName) -> \(message)")
     }
 
     private func setupAudioVideoFacadeObservers() {
@@ -250,6 +268,8 @@ class MeetingModel: NSObject {
         audioVideo.addRealtimeDataMessageObserver(topic: "portrait", observer: self)
         audioVideo.addRealtimeDataMessageObserver(topic: "landscape", observer: self)
         audioVideo.addRealtimeDataMessageObserver(topic: "cameraToggle", observer: self)
+        audioVideo.addRealtimeDataMessageObserver(topic: "incrementTimerRequested", observer: self)
+        audioVideo.addRealtimeDataMessageObserver(topic: "incrementTimerApproved", observer: self)
         audioVideo.addEventAnalyticsObserver(observer: self)
     }
 
@@ -268,6 +288,8 @@ class MeetingModel: NSObject {
         audioVideo.removeRealtimeDataMessageObserverFromTopic(topic: "portrait")
         audioVideo.removeRealtimeDataMessageObserverFromTopic(topic: "landscape")
         audioVideo.removeRealtimeDataMessageObserverFromTopic(topic: "cameraToggle")
+        audioVideo.removeRealtimeDataMessageObserverFromTopic(topic: "incrementTimerRequested")
+        audioVideo.removeRealtimeDataMessageObserverFromTopic(topic: "incrementTimerApproved")
         audioVideo.removeEventAnalyticsObserver(observer: self)
     }
 
@@ -280,7 +302,7 @@ class MeetingModel: NSObject {
             setupAudioVideoFacadeObservers()
             try currentMeetingSession.audioVideo.start(audioVideoConfiguration: audioVideoConfig)
         } catch {
-            logger.error(msg: "Error starting the Meeting: \(error.localizedDescription)")
+//            logger.error(msg: "Error starting the Meeting: \(error.localizedDescription)")
             endMeeting()
         }
     }
@@ -289,11 +311,11 @@ class MeetingModel: NSObject {
         for currentAttendeeInfo in attendeeInfo {
             let attendeeId = currentAttendeeInfo.attendeeId
             if !rosterModel.contains(attendeeId: attendeeId) {
-                logger.error(msg: "Cannot find attendee with attendee id \(attendeeId)" +
-                    " external user id \(currentAttendeeInfo.externalUserId): \(action)")
+//                logger.error(msg: "Cannot find attendee with attendee id \(attendeeId)" +
+//                    " external user id \(currentAttendeeInfo.externalUserId): \(action)")
                 continue
             }
-            logger.info(msg: "\(rosterModel.getAttendeeName(for: attendeeId) ?? "nil"): \(action)")
+//            logger.info(msg: "\(rosterModel.getAttendeeName(for: attendeeId) ?? "nil"): \(action)")
         }
     }
 
@@ -329,6 +351,22 @@ class MeetingModel: NSObject {
     func notifyIncrementTime() {
         do {
             try currentMeetingSession.audioVideo.realtimeSendDataMessage(topic: "incrementTimer", data: "increment", lifetimeMs: 1000)
+        } catch {
+            logger.error(msg: "Failed to send increment time end notification!")
+        }
+    }
+    
+    func sendIncrementRequest() {
+        do {
+            try currentMeetingSession.audioVideo.realtimeSendDataMessage(topic: "incrementTimerRequested", data: "", lifetimeMs: 1000)
+        } catch {
+            logger.error(msg: "Failed to send increment time end notification!")
+        }
+    }
+    
+    func approveIncrementRequest() {
+        do {
+            try currentMeetingSession.audioVideo.realtimeSendDataMessage(topic: "incrementTimerApproved", data: "", lifetimeMs: 1000)
         } catch {
             logger.error(msg: "Failed to send increment time end notification!")
         }
@@ -488,7 +526,7 @@ extension MeetingModel: RealtimeObserver {
                                                  signal: .high)
                 newAttendees.append(newAttendee)
                 let action = "Joined"
-                logger.info(msg: "attendeeId:\(currentAttendeeInfo.attendeeId) externalUserId:\(currentAttendeeInfo.externalUserId) \(action)")
+//                logger.info(msg: "attendeeId:\(currentAttendeeInfo.attendeeId) externalUserId:\(currentAttendeeInfo.externalUserId) \(action)")
 
                 // if other attendee starts sharing content, stop content sharing from current device
                 let modality = DefaultModality(id: attendeeId)
@@ -701,9 +739,18 @@ extension MeetingModel: DataMessageObserver {
             isRemotePortrait?(false)
         }
         else if dataMessage.topic == "cameraToggle" {
+//            print("cameraTopicToggleFetched=")
             let data = String(data: dataMessage.data, encoding: .utf8) ?? ""
-
+//            print("dataCheck=",data)
             frontCameraToggle?(data == "true" ? true : false)
+        }
+        
+        else if dataMessage.topic == "incrementTimerRequested" {
+            incrementTimerRequestedHandler?()
+        }
+        
+        else if dataMessage.topic == "incrementTimerApproved" {
+            incrementTimerApprovedHandler?()
         }
     }
 }

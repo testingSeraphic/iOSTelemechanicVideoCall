@@ -7,33 +7,36 @@ import PackageDescription
 let package = Package(
     name: "TeleVideoCall",
     platforms: [
-        .iOS(.v13)  // Ensure it's targeting iOS
+        .iOS(.v13)
     ],
     products: [
         .library(
-            name: "TeleVideoCall",         // This is the product name
-            targets: ["TeleVideoCall"]     // This is the target that builds the library
+            name: "TeleVideoCall",
+            targets: ["TeleVideoCall"]
         ),
     ],
     dependencies: [
         .package(url: "https://github.com/aws/amazon-chime-sdk-ios-spm", branch: "main"),
+        .package(url: "https://github.com/cometchat/chat-sdk-ios.git", from: "4.0.54"),
+        .package(url: "https://github.com/ninjaprox/NVActivityIndicatorView.git", from: "5.2.0"),
+        .package(url: "https://github.com/SDWebImage/SDWebImage.git", from: "5.1.0")
     ],
     targets: [
         .target(
-            name: "TeleVideoCall",  // This is the target that builds the library
+            name: "TeleVideoCall",
             dependencies: [
                 .product(name: "AmazonChimeSDK", package: "amazon-chime-sdk-ios-spm")
             ],
-            path: "Sources/TeleVideoCall" , // Path to your source code folder
+            path: "Sources/TeleVideoCall" ,
             resources: [
                 .process("TelemechanicVideoMain.storyboard"),
                 .process("Font/ttf")
                        ]
         ),
         .testTarget(
-            name: "TeleVideoCallTests",  // This is the test target
+            name: "TeleVideoCallTests",
             dependencies: ["TeleVideoCall"],
-            path: "Tests/TeleVideoCallTests"  // Path for test files
+            path: "Tests/TeleVideoCallTests"
         ),
     ]
 )

@@ -34,6 +34,11 @@ class MeetingModule {
                         selfName: String,
                         overriddenEndpoint: String,
                         primaryExternalMeetingId: String,
+                        loginUID: String,
+                        remoteUID: String,
+                        roleType: String,
+                        meetingTimer: String,
+                        loginUserName: String,
                         completion: @escaping (Bool) -> Void) {
         requestRecordPermission(audioDeviceCapabilities: .inputAndOutput) { success in
             guard success else {
@@ -74,7 +79,13 @@ class MeetingModule {
                                                 primaryExternalMeetingId: joinMeetingResponse.joinInfo.primaryExternalMeetingId ?? "",
                                                 selfName: selfName,
                                                 audioVideoConfig: audioVideoConfig,
-                                                meetingEndpointUrl: overriddenEndpoint)
+                                                meetingEndpointUrl: overriddenEndpoint,
+                                                loginUID: loginUID,
+                                                remoteUID: remoteUID,
+                                                meetingTime: meetingTimer,
+                                                roleType: roleType,
+                                                loginUserName: loginUserName
+                                               )
                 self.meetings[meetingModel.uuid] = meetingModel
 
                 DispatchQueue.main.async { [weak self] in
@@ -94,13 +105,16 @@ class MeetingModule {
     func selectDevice(_ meeting: MeetingModel, completion: @escaping (Bool) -> Void) {
         // This is needed to discover bluetooth devices
         configureAudioSession()
-        self.meetingPresenter.showDeviceSelectionView(meetingModel: meeting) { success in
-            if success {
-                self.activeMeeting = meeting
-                MeetingModule.shared().deviceSelected(meeting.deviceSelectionModel)
-            }
-            completion(success)
-        }
+        self.activeMeeting = meeting
+        MeetingModule.shared().deviceSelected(meeting.deviceSelectionModel)
+        completion(true)
+//        self.meetingPresenter.showDeviceSelectionView(meetingModel: meeting) { success in
+//            if success {
+//                self.activeMeeting = meeting
+//                MeetingModule.shared().deviceSelected(meeting.deviceSelectionModel)
+//            }
+//            completion(success)
+//        }
     }
 
     func deviceSelected(_ deviceSelectionModel: DeviceSelectionModel) {
@@ -108,9 +122,10 @@ class MeetingModule {
             return
         }
         activeMeeting.deviceSelectionModel = deviceSelectionModel
-        meetingPresenter.dismissActiveMeetingView {
-            self.meetingPresenter.showMeetingView(meetingModel: activeMeeting) { _ in }
-        }
+        self.meetingPresenter.showMeetingView(meetingModel: activeMeeting) { _ in }
+//        meetingPresenter.dismissActiveMeetingView {
+//            self.meetingPresenter.showMeetingView(meetingModel: activeMeeting) { _ in }
+//        }
     }
 
     func joinMeeting(_ meeting: MeetingModel, completion: @escaping (Bool) -> Void) {

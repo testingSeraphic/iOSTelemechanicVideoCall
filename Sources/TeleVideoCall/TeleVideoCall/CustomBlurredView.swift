@@ -26,14 +26,16 @@ class CustomBlurredView: UIView {
 
         // create custom blur view
         let blurEffect = UIBlurEffect(style: .systemThickMaterialDark)
-        let customBlurEffectView = CustomVisualEffectView(effect: blurEffect, intensity: 0.3)
+        let customBlurEffectView = CustomVisualEffectView(effect: blurEffect, intensity: 0.4)
         customBlurEffectView.frame = containerView.bounds
         customBlurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
         // create semi-transparent black view
         let dimmedView = UIView(frame: containerView.bounds)
-        let darkerGray = UIColor(red: 70/255.0, green: 70/255.0, blue: 70/255.0, alpha: 0.6)
+      //  let darkerGray = UIColor(red: 70/255.0, green: 70/255.0, blue: 70/255.0, alpha: 0.6)
+        let darkerGray = UIColor(red: 232/255.0, green: 242/255.0, blue: 242/255.0, alpha: 0.5)
         dimmedView.backgroundColor = darkerGray
+        dimmedView.layer.opacity = 0.2
         dimmedView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
         // add both as subviews
@@ -77,3 +79,42 @@ final class CustomVisualEffectView: UIVisualEffectView {
     private let customIntensity: CGFloat
     private var animator: UIViewPropertyAnimator?
 }
+
+
+class CustomLightBlurredView: UIView {
+
+    override init(frame: CGRect) {
+         super.init(frame: frame)
+         setupView()
+     }
+     
+     required init?(coder: NSCoder) {
+         super.init(coder: coder)
+         setupView()
+     }
+     
+     private func setupView() {
+         // create container view
+         let containerView = UIView(frame: self.bounds)
+         containerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+         // create custom blur view with light effect
+         let blurEffect = UIBlurEffect(style: .systemThickMaterialLight)
+         let customBlurEffectView = CustomVisualEffectView(effect: blurEffect, intensity: 0.3)
+         customBlurEffectView.frame = containerView.bounds
+         customBlurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+         // create very transparent white overlay
+         let dimmedView = UIView(frame: containerView.bounds)
+         let lightGray = UIColor(white: 1.0, alpha: 0.05) // More transparency for a more subtle overlay
+         dimmedView.backgroundColor = lightGray
+         dimmedView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+         // add both as subviews
+         containerView.addSubview(customBlurEffectView)
+         containerView.addSubview(dimmedView)
+
+         // add container view to the main view
+         self.addSubview(containerView)
+     }
+ }

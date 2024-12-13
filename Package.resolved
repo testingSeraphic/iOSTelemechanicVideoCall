@@ -1,5 +1,5 @@
 {
-  "originHash" : "c55bb409885641b53dbcf92cdcfc3699ea51e7854eb6f791ce2633c5c98d8178",
+  "originHash" : "ace4b62411a7af699a05a04892238a31b37c01e54728b999f2952ef4de7c7d6f",
   "pins" : [
     {
       "identity" : "amazon-chime-sdk-ios-spm",
@@ -8,6 +8,33 @@
       "state" : {
         "branch" : "main",
         "revision" : "8ee25966d697a999ab20ffcf790cfd116e911270"
+      }
+    },
+    {
+      "identity" : "chat-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cometchat/chat-sdk-ios.git",
+      "state" : {
+        "revision" : "6eab3d70d6415931003fbb9f593c97e5f71e18ba",
+        "version" : "4.0.54"
+      }
+    },
+    {
+      "identity" : "nvactivityindicatorview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ninjaprox/NVActivityIndicatorView.git",
+      "state" : {
+        "revision" : "121455c4e630fcb95aaefd7e4257b0c2e3cfe6d5",
+        "version" : "5.2.0"
+      }
+    },
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage.git",
+      "state" : {
+        "revision" : "10d06f6a33bafae8c164fbfd1f03391f6d4692b3",
+        "version" : "5.20.0"
       }
     }
   ],

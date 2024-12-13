@@ -145,8 +145,11 @@ public class DefaultCameraCaptureSource1: NSObject, CameraCaptureSource {
         }
         session.commitConfiguration()
         updateOrientation()
-        session.startRunning()
-
+        
+        
+        self.session.startRunning()
+        
+       
         // If the torch was currently on, starting the sessions
         // would turn it off. See if we can turn it back on.
         let currentTorchEnabled = torchEnabled

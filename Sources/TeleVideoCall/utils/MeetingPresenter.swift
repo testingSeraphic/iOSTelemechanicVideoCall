@@ -9,7 +9,7 @@
 import UIKit
 
 class MeetingPresenter {
-    private let mainStoryboard = UIStoryboard(name: "TelemechanicVideoMain", bundle: Bundle.module)
+    private let mainStoryboard = UIStoryboard(name: "TelemechanicVideoMain", bundle: nil)
     private var activeMeetingViewController: UIViewController?
 
     var rootViewController: UIViewController? {
@@ -17,15 +17,8 @@ class MeetingPresenter {
     }
 
     func showMeetingView(meetingModel: MeetingModel, completion: @escaping (Bool) -> Void) {
-        
-        guard let rootViewController = self.rootViewController else {
-     
-            completion(false)
-            return
-        }
-        
         guard let meetingViewController = mainStoryboard.instantiateViewController(withIdentifier: "VideoVC")
-                as? VideoVC else {
+            as? VideoVC, let rootViewController = self.rootViewController else {
             completion(false)
             return
         }
@@ -42,6 +35,12 @@ class MeetingPresenter {
             completion()
             return
         }
+        
+//        if let navigationController = rootViewController as? UINavigationController {
+//            navigationController.popViewController(animated: true)
+//            self.activeMeetingViewController = nil
+//            completion()
+//        }
         activeMeetingViewController.dismiss(animated: true) {
             self.activeMeetingViewController = nil
             completion()

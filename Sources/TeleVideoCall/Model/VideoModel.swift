@@ -393,12 +393,25 @@ class VideoModel: NSObject {
         }
     }
 
+    
+    func updateVideoResolution() {
+        var updatedSources:[RemoteVideoSource: VideoSubscriptionConfiguration] = [:]
+        for(source, config) in remoteVideoSourceConfigurations {
+            config.targetResolution = .videoResolutionFHD
+            updatedSources[source] = config
+        }
+        audioVideoFacade.updateVideoSourceSubscriptions(addedOrUpdated: updatedSources, removed: [])
+    }
+    
     func updateVideoSourceSubscription() {
+        updateVideoResolution()
         if videoSourcesToBeSubscribed.isEmpty && videoSourcesToBeUnsubscribed.isEmpty {
             return
         }
         audioVideoFacade.updateVideoSourceSubscriptions(addedOrUpdated: videoSourcesToBeSubscribed, removed: Array(videoSourcesToBeUnsubscribed))
         videoSourcesToBeSubscribed.removeAll()
         videoSourcesToBeUnsubscribed.removeAll()
+        
+
     }
 }
