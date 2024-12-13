@@ -7,7 +7,7 @@ import PackageDescription
 let package = Package(
     name: "TeleVideoCall",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v14)
     ],
     products: [
         .library(
@@ -25,7 +25,10 @@ let package = Package(
         .target(
             name: "TeleVideoCall",
             dependencies: [
-                .product(name: "AmazonChimeSDK", package: "amazon-chime-sdk-ios-spm")
+                .product(name: "AmazonChimeSDK", package: "amazon-chime-sdk-ios-spm"),
+                .product(name: "CometChatSDK", package: "chat-sdk-ios"),
+                .product(name: "NVActivityIndicatorView", package: "NVActivityIndicatorView"),
+                .product(name: "SDWebImage", package: "SDWebImage")
             ],
             path: "Sources/TeleVideoCall" ,
             resources: [

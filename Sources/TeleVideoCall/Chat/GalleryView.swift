@@ -78,10 +78,14 @@ class GalleryView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,
     private func checkPhotoLibraryPermission() {
         PHPhotoLibrary.requestAuthorization { [weak self] status in
             guard let self = self else { return }
-            if status == .authorized || status == .limited {
-                self.fetchAssets()
+            if #available(iOS 14, *) {
+                if status == .authorized || status == .limited {
+                    self.fetchAssets()
+                } else {
+                    print("Permission denied")
+                }
             } else {
-                print("Permission denied")
+                // Fallback on earlier versions
             }
         }
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ChatLeftImageCell: UITableViewCell {
 
@@ -52,9 +53,9 @@ class ChatLeftImageCell: UITableViewCell {
             
             if data.messageType == .image {
                 self.playImageView.isHidden = true
-//                messageImageView.sd_showActivityIndicatorView()
-//                messageImageView.sd_setIndicatorStyle(.medium)
-//                messageImageView.sd_setShowActivityIndicatorView(true)
+               // messageImageView.sd_showActivityIndicatorView()
+                //messageImageView.sd_setIndicatorStyle(.medium)
+               // messageImageView.sd_setShowActivityIndicatorView(true)
                 messageImageView.sd_setImage(with: url, placeholderImage: nil)
             } else {
                 self.playImageView.isHidden = false
