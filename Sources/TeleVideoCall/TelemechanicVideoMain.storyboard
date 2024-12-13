@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ndI-Z9-WgE">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -147,7 +146,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iev-rA-JQQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plO-bH-A5x" customClass="CustomBlurredView" customModule="TelemechanicVideoCallPluginDemoSPM" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plO-bH-A5x" customClass="CustomBlurredView" customModule="TeleVideoCall">
                                                                 <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
@@ -182,7 +181,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZW-0i-hu3">
                                                         <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GSf-9C-F1a" customClass="CustomBlurredView" customModule="TelemechanicVideoCallPluginDemoSPM" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GSf-9C-F1a" customClass="CustomBlurredView" customModule="TeleVideoCall">
                                                                 <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
@@ -227,7 +226,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nja-ej-Qej">
                                         <rect key="frame" x="306.66666666666669" y="319" width="113.33333333333331" height="495"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tqu-Yz-TiB" customClass="CustomBlurredView" customModule="TelemechanicVideoCallPluginDemoSPM" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tqu-Yz-TiB" customClass="CustomBlurredView" customModule="TeleVideoCall">
                                                 <rect key="frame" x="0.0" y="0.0" width="113.33333333333333" height="495"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
@@ -549,7 +548,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrH-Kq-9Jf">
                                         <rect key="frame" x="24" y="79" width="69.666666666666671" height="35.666666666666657"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtL-JN-w7F" customClass="CustomBlurredView" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtL-JN-w7F" customClass="CustomBlurredView" customModule="TeleVideoCall">
                                                 <rect key="frame" x="0.0" y="0.0" width="69.666666666666671" height="35.666666666666664"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
@@ -585,7 +584,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vym-hY-XMg">
                                         <rect key="frame" x="356" y="79" width="50" height="50"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Jj-cE-CTa" customClass="CustomBlurredView" customModule="TelemechanicVideoCallPluginDemoSPM" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Jj-cE-CTa" customClass="CustomBlurredView" customModule="TeleVideoCall">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
@@ -683,7 +682,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85x-av-QLv">
                                                 <rect key="frame" x="0.0" y="50" width="432" height="384"/>
                                                 <subviews>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvU-nK-biq" customClass="CustomBlurredView" customModule="TelemechanicVideoCallPluginDemoSPM" customModuleProvider="target">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvU-nK-biq" customClass="CustomBlurredView" customModule="TeleVideoCall">
                                                         <rect key="frame" x="0.0" y="0.0" width="432" height="384"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
