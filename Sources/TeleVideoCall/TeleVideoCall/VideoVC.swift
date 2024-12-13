@@ -297,10 +297,10 @@ class VideoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let fontPath = Bundle.main.path(forResource: "OverusedGrotesk-Medium", ofType: "ttf")
-//        let fontDataProvider = CGDataProvider(filename: fontPath!)
-//        let cgFont = CGFont(fontDataProvider!)!
-//        CTFontManagerRegisterGraphicsFont(cgFont, nil)
+        let fontPath = Bundle.main.path(forResource: "OverusedGrotesk-Medium", ofType: "ttf")
+        let fontDataProvider = CGDataProvider(filename: fontPath!)
+        let cgFont = CGFont(fontDataProvider!)!
+        CTFontManagerRegisterGraphicsFont(cgFont, nil)
         
         //meeting Model Configuration
         guard let meetingModel = meetingModel else {
