@@ -222,7 +222,8 @@ class VideoVC: UIViewController {
     let cursorSize : CGFloat = 35
     
     let cursorImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "cursor"))
+        let image = UIImage(named: "cursor", in: .module, with: nil)
+        let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = .red
         return imageView
