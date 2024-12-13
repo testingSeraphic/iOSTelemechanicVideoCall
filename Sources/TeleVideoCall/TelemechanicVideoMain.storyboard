@@ -549,7 +549,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrH-Kq-9Jf">
                                         <rect key="frame" x="24" y="79" width="69.666666666666671" height="35.666666666666657"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtL-JN-w7F" customClass="CustomBlurredView" customModule="TelemechanicVideoCallPluginDemoSPM" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtL-JN-w7F" customClass="CustomBlurredView" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="69.666666666666671" height="35.666666666666664"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
