@@ -952,7 +952,7 @@
                                                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="eZb-N8-GY3">
                                                                                                 <rect key="frame" x="0.0" y="0.0" width="296" height="56"/>
                                                                                                 <subviews>
-                                                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEh-Rb-2Vu" customClass="ExpandingTextView" customModule="TelemechanicVideoCallPluginDemoSPM" customModuleProvider="target">
+                                                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEh-Rb-2Vu" customClass="ExpandingTextView" customModule="TeleVideoCall">
                                                                                                         <rect key="frame" x="12" y="18" width="243" height="20"/>
                                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                         <constraints>

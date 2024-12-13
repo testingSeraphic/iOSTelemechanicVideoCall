@@ -1229,7 +1229,7 @@ extension VideoVC {
     
     private func setTextView() {
         // configure the custom text view
-      //  messageTextView.placeholder = "Add message"
+        messageTextView.placeholder = "Add message"
         messageTextView.text = ""
         messageTextView.font = UIFont(name: "OverusedGrotesk-Medium", size: 16)
         // height change
