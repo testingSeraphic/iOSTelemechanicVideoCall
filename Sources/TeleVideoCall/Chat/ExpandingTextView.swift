@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ExpandingTextView: UITextView {
+public class ExpandingTextView: UITextView {
     
     // placeholder label
-    private let placeholderLabel: UILabel = {
+    public let placeholderLabel: UILabel = {
         let label = UILabel()
         label.textColor = .lightGray
         label.font = UIFont.systemFont(ofSize: 16)
@@ -18,22 +18,22 @@ class ExpandingTextView: UITextView {
     }()
     
     // minimum height to match single line
-    private var minHeight: CGFloat = 0
+    public var minHeight: CGFloat = 0
     
     // maximum height dynamically calculated for 4 lines
-    var maxHeight: CGFloat = 0
+    public var maxHeight: CGFloat = 0
     
     // closure for height change
-    var onHeightChange: ((CGFloat) -> Void)?
+    public var onHeightChange: ((CGFloat) -> Void)?
     
     // placeholder text
-    var placeholder: String? {
+    public var placeholder: String? {
         didSet {
             placeholderLabel.text = placeholder
         }
     }
     
-    override var text: String! {
+    public override var text: String! {
         didSet {
             textDidChange()
         }
@@ -84,7 +84,7 @@ class ExpandingTextView: UITextView {
         }
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         
         // calculate minimum height (single line height + insets)
