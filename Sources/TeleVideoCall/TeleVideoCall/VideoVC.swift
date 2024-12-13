@@ -1818,7 +1818,6 @@ extension VideoVC {
 
 extension VideoVC: PHPickerViewControllerDelegate {
     
-    @available(iOS 14.0, *)
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true, completion: nil)
         DispatchQueue.main.async {
