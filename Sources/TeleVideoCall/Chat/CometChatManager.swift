@@ -9,7 +9,7 @@ import Foundation
 import CometChatSDK
 import AVFoundation
 
-class CometChatManager {
+public class CometChatManager {
     
     static let shared = CometChatManager()
     
