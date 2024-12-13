@@ -418,7 +418,7 @@
                                             <constraint firstAttribute="height" constant="108" id="nWr-B5-iyi"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDj-mS-FvB" customClass="CustomBlurredView" customModule="TelemechanicVideoCallPluginDemoSPM" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDj-mS-FvB" customClass="CustomBlurredView" customModule="TeleVideoCall">
                                         <rect key="frame" x="0.0" y="824" width="430" height="108"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
@@ -427,7 +427,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YqM-jh-spS" customClass="CustomBlurredView" customModule="TelemechanicVideoCallPluginDemoSPM" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YqM-jh-spS" customClass="CustomBlurredView" customModule="TeleVideoCall">
                                         <rect key="frame" x="0.0" y="417" width="430" height="515"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -637,7 +637,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vo-mc-ydL">
                                         <rect key="frame" x="-1" y="392" width="432" height="434"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFD-gD-ajN" customClass="DraggableView" customModule="TelemechanicVideoCallPluginDemoSPM" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFD-gD-ajN" customClass="DraggableView" customModule="TeleVideoCall">
                                                 <rect key="frame" x="0.0" y="0.0" width="432" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WM1-9r-uLJ">
@@ -836,7 +836,7 @@
                                                                                             </stackView>
                                                                                         </subviews>
                                                                                     </stackView>
-                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbU-Xc-zxe" customClass="GalleryView" customModule="TelemechanicVideoCallPluginDemoSPM" customModuleProvider="target">
+                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbU-Xc-zxe" customClass="GalleryView" customModule="TeleVideoCall">
                                                                                         <rect key="frame" x="0.0" y="106" width="392" height="141"/>
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <constraints>
