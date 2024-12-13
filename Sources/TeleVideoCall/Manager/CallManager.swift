@@ -15,7 +15,7 @@ public class CallManager {
     private init() {
     }
     
-    func navigateToVideoCallScreen(loginName: String,roomId: String, loginUID: String, remoteUID: String, roleType: String, meetingTimer: String) {
+    public func navigateToVideoCallScreen(loginName: String,roomId: String, loginUID: String, remoteUID: String, roleType: String, meetingTimer: String) {
         
         MeetingModule.shared().prepareMeeting(meetingId: roomId,
                                               selfName: loginName,
