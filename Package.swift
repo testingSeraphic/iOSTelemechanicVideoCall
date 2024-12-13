@@ -32,7 +32,7 @@ let package = Package(
             ],
             path: "Sources/TeleVideoCall" ,
             resources: [
-                .process("TelemechanicVideoMain.storyboard"),
+                .process("TeleVideoCall/TelemechanicVideoMain.storyboard"),
                 .process("Font/ttf")
                        ]
         ),
