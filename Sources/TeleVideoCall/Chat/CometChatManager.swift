@@ -11,7 +11,7 @@ import AVFoundation
 
 public class CometChatManager {
     
-    static let shared = CometChatManager()
+    public static let shared = CometChatManager()
     
     private init() {}
     
