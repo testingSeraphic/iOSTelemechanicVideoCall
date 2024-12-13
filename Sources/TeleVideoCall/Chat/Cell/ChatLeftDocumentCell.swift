@@ -53,11 +53,11 @@ class ChatLeftDocumentCell: UITableViewCell {
         
         switch message.messageType {
         case .file:
-            fileTypeImageView.image = UIImage(named: "chat-file")
+            fileTypeImageView.image = UIImage(named: "chat-file", in: .module, with: nil)
         case .audio:
-            fileTypeImageView.image = UIImage(named: "chat-audio")
+            fileTypeImageView.image = UIImage(named: "chat-audio", in: .module, with: nil)
         case .video:
-            fileTypeImageView.image = UIImage(named: "chat-video")
+            fileTypeImageView.image = UIImage(named: "chat-video", in: .module, with: nil)
             
         default:
             break

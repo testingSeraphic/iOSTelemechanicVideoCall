@@ -54,11 +54,11 @@ class ChatRightDocumentCell: UITableViewCell {
         
         switch message.messageType {
         case .file:
-            fileTypeImageView.image = UIImage(named: "chat-file")
+            fileTypeImageView.image = UIImage(named: "chat-file", in: .module, with: nil)
         case .audio:
-            fileTypeImageView.image = UIImage(named: "chat-audio")
+            fileTypeImageView.image = UIImage(named: "chat-audio", in: .module, with: nil)
         case .video:
-            fileTypeImageView.image = UIImage(named: "chat-video")
+            fileTypeImageView.image = UIImage(named: "chat-video", in: .module, with: nil)
             
         default:
             break
@@ -68,9 +68,9 @@ class ChatRightDocumentCell: UITableViewCell {
     
     func configureMessageReadStatus(with message: ChatMessage) {
         if message.isRead {
-            readStatusImageView.image = UIImage(named: "message-read-icon")
+            readStatusImageView.image = UIImage(named: "message-read-icon", in: .module, with: nil)
         } else {
-            readStatusImageView.image = UIImage(named: "message-delivered-icon")
+            readStatusImageView.image = UIImage(named: "message-delivered-icon", in: .module, with: nil)
         }
     }
     
