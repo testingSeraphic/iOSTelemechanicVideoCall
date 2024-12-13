@@ -29,7 +29,7 @@ public class CometChatManager {
     var onReceivedMessage: ((ChatMessage)-> Void)?
     
     // MARK: - Initialize CometChat
-    func initializeCometChat(completion: @escaping (Bool, String?) -> Void) {
+    public func initializeCometChat(completion: @escaping (Bool, String?) -> Void) {
         let appSettings = AppSettings.AppSettingsBuilder()
             .subscribePresenceForAllUsers()
             .setRegion(region: region)
