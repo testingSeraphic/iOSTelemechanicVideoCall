@@ -15,7 +15,7 @@ public class CallManager {
     private init() {
     }
     
-    public func navigateToVideoCallScreen(loginName: String,roomId: String, loginUID: String, remoteUID: String, roleType: String, meetingTimer: String) {
+    public func navigateToVideoCallScreen(loginName: String,roomId: String, loginUID: String, remoteUID: String, roleType: String, meetingTimer: String, completion: @escaping(Bool) -> Void) {
         
         MeetingModule.shared().prepareMeeting(meetingId: roomId,
                                               selfName: loginName,
@@ -28,12 +28,7 @@ public class CallManager {
                                               loginUserName: loginName
         ) { success in
             DispatchQueue.main.async {
-                if !success {
-                    // Handle failure to prepare the meeting
-//                    let alert = UIAlertController(title: "Error", message: "Please enter different Meeting ID", preferredStyle: .alert)
-//                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//                    self.present(alert, animated: true, completion: nil)
-                }
+               completion(success)
             }
         }
     }
