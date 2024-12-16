@@ -54,7 +54,7 @@ public struct FontManager {
                 print("*** ERROR: Unknown error occurred while registering font \(fileName). ***")
             }
         } else {
-            print("Successfully registered font: \(fileName)")
+           // print("Successfully registered font: \(fileName)")
         }
     }
 
