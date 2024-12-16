@@ -53,10 +53,16 @@ class ChatLeftImageCell: UITableViewCell {
             
             if data.messageType == .image {
                 self.playImageView.isHidden = true
+                
                // messageImageView.sd_showActivityIndicatorView()
                 //messageImageView.sd_setIndicatorStyle(.medium)
                // messageImageView.sd_setShowActivityIndicatorView(true)
-                messageImageView.sd_setImage(with: url, placeholderImage: nil)
+                messageImageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
+                messageImageView.sd_imageIndicator?.startAnimatingIndicator()
+                messageImageView.sd_setImage(with: url, placeholderImage: nil) { [weak self] _, _, _, _ in
+                    self?.messageImageView.sd_imageIndicator?.stopAnimatingIndicator()
+                }
+               // messageImageView.sd_setImage(with: url, placeholderImage: nil)
             } else {
                 self.playImageView.isHidden = false
                 CometChatManager.shared.generateThumbnail(from: url) {  [weak self] thumbnail in

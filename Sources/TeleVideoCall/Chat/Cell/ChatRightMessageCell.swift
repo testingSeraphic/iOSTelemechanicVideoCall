@@ -37,9 +37,9 @@ class ChatRightMessageCell: UITableViewCell {
     
     func configureMessageReadStatus(with message: ChatMessage) {
         if message.isRead {
-            readStatusImageView.image = UIImage(named: "message-read-icon")
+            readStatusImageView.image = UIImage(named: "message-read-icon", in: .module, with: nil)
         } else {
-            readStatusImageView.image = UIImage(named: "message-delivered-icon")
+            readStatusImageView.image = UIImage(named: "message-delivered-icon", in: .module, with: nil)
         }
     }
     

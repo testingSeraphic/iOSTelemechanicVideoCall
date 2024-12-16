@@ -2061,7 +2061,7 @@ extension VideoVC {
                     self.attachmentUserImageWidth.constant = 56.25
                     self.attachmentUserImageHeight.constant = 71.94
                     
-                    self.selectedAttachmentUserImageView.image = UIImage(named: "filePreview")
+                    self.selectedAttachmentUserImageView.image = UIImage(named: "filePreview", in: .module, with: nil)
                     self.attachmentNameLabel.isHidden = false
                     self.attachmentNameLabel.text = file.name?.abbreviated(maxLength: 30) ?? ""
                     
@@ -2083,7 +2083,7 @@ extension VideoVC {
                     self.attachmentUserImageWidth.constant = 74
                     self.attachmentUserImageHeight.constant = 74
                     
-                    self.selectedAttachmentUserImageView.image = UIImage(named: "audioPreview")
+                    self.selectedAttachmentUserImageView.image = UIImage(named: "audioPreview", in: .module, with: nil)
                     self.attachmentNameLabel.isHidden = false
                     self.attachmentNameLabel.text = file.name?.abbreviated(maxLength: 30) ?? ""
                     

@@ -58,7 +58,12 @@ class ChatRightImageCell: UITableViewCell {
 //                messageImageView.sd_showActivityIndicatorView()
 //                messageImageView.sd_setIndicatorStyle(.medium)
 //                messageImageView.sd_setShowActivityIndicatorView(true)
-                messageImageView.sd_setImage(with: url, placeholderImage: nil)
+//                messageImageView.sd_setImage(with: url, placeholderImage: nil)
+                messageImageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
+                messageImageView.sd_imageIndicator?.startAnimatingIndicator()
+                messageImageView.sd_setImage(with: url, placeholderImage: nil) { [weak self] _, _, _, _ in
+                    self?.messageImageView.sd_imageIndicator?.stopAnimatingIndicator()
+                }
             } else {
                 self.playImageView.isHidden = false
                 CometChatManager.shared.generateThumbnail(from: url) {  [weak self] thumbnail in
@@ -78,9 +83,9 @@ class ChatRightImageCell: UITableViewCell {
     
     func configureMessageReadStatus(with message: ChatMessage) {
         if message.isRead {
-            readStatusImageView.image = UIImage(named: "message-read-icon")
+            readStatusImageView.image = UIImage(named: "message-read-icon", in: .module, with: nil)
         } else {
-            readStatusImageView.image = UIImage(named: "message-delivered-icon")
+            readStatusImageView.image = UIImage(named: "message-delivered-icon", in: .module, with: nil)
         }
     }
     
